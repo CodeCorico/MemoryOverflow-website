@@ -48,17 +48,12 @@ button::-moz-focus-inner,input::-moz-focus-inner,legend{border:0;padding:0}
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Orbitron", "sans serif";
   font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
-  background: url("background.jpg") no-repeat top center #231b1d;
-  background-attachment: fixed;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  background: #2d2d2d;
+  color: white;
 }
 
 a, a:hover, a:visited, a:focus {
@@ -70,48 +65,33 @@ a:hover {
   text-decoration: underline;
 }
 
-@-webkit-keyframes logo-animation { 0% { -webkit-transform: rotate(0deg); } 100% {-webkit-transform: rotate(360deg); } }
-@-moz-keyframes    logo-animation { 0% { -moz-transform: rotate(0deg); }    100% { -moz-transform: rotate(360deg); } }
-@-ms-keyframes     logo-animation { 0% { -ms-transform: rotate(0deg); }     100% { -ms-transform: rotate(360deg); } }
-@-o-keyframes      logo-animation { 0% { -o-transform: rotate(0deg); }      100% { -o-transform: rotate(360deg); } }
-@keyframes         logo-animation { 0% { transform: rotate(0deg); }         100% { transform: rotate(360deg); } }
+@-webkit-keyframes rotate-right-animation { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } }
+@-moz-keyframes    rotate-right-animation { 0% { -moz-transform: rotate(0deg); }    100% { -moz-transform: rotate(360deg); } }
+@-ms-keyframes     rotate-right-animation { 0% { -ms-transform: rotate(0deg); }     100% { -ms-transform: rotate(360deg); } }
+@-o-keyframes      rotate-right-animation { 0% { -o-transform: rotate(0deg); }      100% { -o-transform: rotate(360deg); } }
+@keyframes         rotate-right-animation { 0% { transform: rotate(0deg); }         100% { transform: rotate(360deg); } }
 
-@-webkit-keyframes logo-animation-back { 0% { -webkit-transform: rotate(0deg); } 100% {-webkit-transform: rotate(-360deg); } }
-@-moz-keyframes    logo-animation-back { 0% { -moz-transform: rotate(0deg); }    100% { -moz-transform: rotate(-360deg); } }
-@-ms-keyframes     logo-animation-back { 0% { -ms-transform: rotate(0deg); }     100% { -ms-transform: rotate(-360deg); } }
-@-o-keyframes      logo-animation-back { 0% { -o-transform: rotate(0deg); }      100% { -o-transform: rotate(-360deg); } }
-@keyframes         logo-animation-back { 0% { transform: rotate(0deg); }         100% { transform: rotate(-360deg); } }
+@-webkit-keyframes rotate-left-animation { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(-360deg); } }
+@-moz-keyframes    rotate-left-animation { 0% { -moz-transform: rotate(0deg); }    100% { -moz-transform: rotate(-360deg); } }
+@-ms-keyframes     rotate-left-animation { 0% { -ms-transform: rotate(0deg); }     100% { -ms-transform: rotate(-360deg); } }
+@-o-keyframes      rotate-left-animation { 0% { -o-transform: rotate(0deg); }      100% { -o-transform: rotate(-360deg); } }
+@keyframes         rotate-left-animation { 0% { transform: rotate(0deg); }         100% { transform: rotate(-360deg); } }
 
-header {
+.body-header {
   position: relative;
-  height: 300px;
+  width: 100%;
   overflow: hidden;
 }
 
-header .header-fixed {
-  z-index: 1;
-  position: relative;
-  height: 300px;
-  width: 100%;
-}
-
-header.locked .header-fixed {
-  position: fixed;
-  left: 0;
-  top: -210px;
-}
-
-header .header-content {
+.body-header-content {
   position: relative;
   width: 1000px;
-  height: 300px;
   margin: 0 auto;
-  background: url("background.jpg") no-repeat top center #231b1d;
-  background-attachment: fixed;
+  padding-top: 210px;
 }
 
 .logo-bg {
-  opacity: 0.2;
+  opacity: 0.1;
   position: absolute;
   top: 0;
   left: 0;
@@ -120,15 +100,15 @@ header .header-content {
   background: url('logo-animation.png') no-repeat;
   background-size: 100% 100%;
 
-  -webkit-animation: logo-animation 120s linear infinite;
-     -moz-animation: logo-animation 120s linear infinite;
-      -ms-animation: logo-animation 120s linear infinite;
-       -o-animation: logo-animation 120s linear infinite;
-          animation: logo-animation 120s linear infinite;
+  -webkit-animation: rotate-right-animation 120s linear infinite;
+     -moz-animation: rotate-right-animation 120s linear infinite;
+      -ms-animation: rotate-right-animation 120s linear infinite;
+       -o-animation: rotate-right-animation 120s linear infinite;
+          animation: rotate-right-animation 120s linear infinite;
 }
 
 .logo-bg-1 {
-  opacity: 0.3;
+  opacity: 0.15;
   top: 190px;
   left: 213px;
   width: 100px;
@@ -144,7 +124,7 @@ header .header-content {
 }
 
 .logo-bg-3 {
-  opacity: 0.4;
+  opacity: 0.2;
   top: 14px;
   left: 2px;
   width: 250px;
@@ -159,7 +139,7 @@ header .header-content {
 }
 
 .logo-bg-5 {
-  opacity: 0.3;
+  opacity: 0.15;
   top: 40px;
   right: 1px;
   width: 250px;
@@ -176,7 +156,7 @@ header .header-content {
 }
 
 .logo-bg-7 {
-  opacity: 0.3;
+  opacity: 0.15;
   top: -85px;
   left: -279px;
   width: 300px;
@@ -184,14 +164,14 @@ header .header-content {
 }
 
 .logo-bg-3, .logo-bg-4, .logo-bg-5 {
-  -webkit-animation: logo-animation-back 120s linear infinite;
-     -moz-animation: logo-animation-back 120s linear infinite;
-      -ms-animation: logo-animation-back 120s linear infinite;
-       -o-animation: logo-animation-back 120s linear infinite;
-          animation: logo-animation-back 120s linear infinite;
+  -webkit-animation: rotate-left-animation 120s linear infinite;
+     -moz-animation: rotate-left-animation 120s linear infinite;
+      -ms-animation: rotate-left-animation 120s linear infinite;
+       -o-animation: rotate-left-animation 120s linear infinite;
+          animation: rotate-left-animation 120s linear infinite;
 }
 
-header .logo, header .logo:hover {
+.body-header .logo, .body-header .logo:hover {
   position: absolute;
   top: 30px;
   left: 227px;
@@ -207,14 +187,7 @@ header .logo, header .logo:hover {
           transition: all 0.2s ease-out;
 }
 
-header.locked .logo {
-  left: 0;
-  top: 202px;
-  width: 382px;
-  height: 109px;
-}
-
-header .logo .logo-animation {
+.body-header .logo .logo-animation {
   position: absolute;
   top: 0;
   left: 0;
@@ -222,20 +195,14 @@ header .logo .logo-animation {
   height: 156px;
   background: url('logo-animation.png') no-repeat;
 
-  -webkit-animation: logo-animation 90s linear infinite;
-     -moz-animation: logo-animation 90s linear infinite;
-      -ms-animation: logo-animation 90s linear infinite;
-       -o-animation: logo-animation 90s linear infinite;
-          animation: logo-animation 90s linear infinite;
+  -webkit-animation: rotate-right-animation 90s linear infinite;
+     -moz-animation: rotate-right-animation 90s linear infinite;
+      -ms-animation: rotate-right-animation 90s linear infinite;
+       -o-animation: rotate-right-animation 90s linear infinite;
+          animation: rotate-right-animation 90s linear infinite;
 }
 
-header.locked .logo .logo-animation {
-  width: 109px;
-  height: 109px;
-  background-size: 100%;
-}
-
-header .logo h1 {
+.body-header .logo h1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -248,37 +215,37 @@ header .logo h1 {
   background: url('logo.png') no-repeat;
 }
 
-header.locked .logo h1 {
-  width: 382px;
-  height: 109px;
-  background-size: 100%;
-}
-
-header .logo h1 span {
-  font-weight: 400;
-}
-
-header .logo p {
+.body-header .logo p {
   margin: 0;
 }
 
+.body-header .home-message {
+  font-size: 28px;
+  line-height: 40px;
+  text-align: center;
+  margin: 0;
+}
+
+.body-header .home-message span {
+  font-size: 20px;
+}
+
 .options {
-  position: absolute;
-  left: 0;
-  bottom: 0;
   height: 92px;
   width: 100%;
 }
 
 .options-content {
-  position: absolute;
-  right: 0;
-  top: 20px;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .options-item {
-  float: left;
+  display: inline-block;
+  text-align: left;
   margin-left: 40px;
+  font-size: 14px;
+  line-height: 16px;
   color: white;
 }
 
@@ -294,14 +261,14 @@ header .logo p {
   float: left;
   margin-right: 15px;
   width: 50px;
-  font-weight: 600;
   height: 50px;
   overflow: hidden;
 }
 
 .options-item-dev .lt, .options-item-dev .code, .options-item-dev .gt {
   position: absolute;
-  font-size: 22px;
+  font-size: 14px;
+  line-height: 14px;
 }
 
 .options-item-dev .lt {
@@ -313,7 +280,7 @@ header .logo p {
   width: 100%;
   text-align: center;
   padding-top: 7px;
-  font-size: 27px;
+  font-size: 22px;
   line-height: 38px;
 }
 
@@ -327,8 +294,6 @@ header .logo p {
   border-left: 1px solid rgba(255, 255, 255, .5);
   padding-left: 15px;
   color: #E1B700;
-  font-weight: 600;
-  font-size: 14px;
   margin-top: 3px;
 }
 
@@ -339,69 +304,128 @@ header .logo p {
   background: none;
   border: none;
   color: white;
-  font-weight: 400;
 }
 
-.content {
+.body-content {
   position: relative;
-  background: white;
-  width: 1000px;
-  margin: 0 auto;
+  width: 100%;
+  height: 1442px;
+  background: url("background.png") repeat-x;
   overflow: hidden;
 }
 
-.introduction {
-  height: 300px;
-  background: rgba(0, 0, 0, 0.3);
-  color: white;
-}
-
-.editions {
-  height: 300px;
-  background: rgba(255, 0, 0, 0.3);
-  color: white;
-}
-
-.last-cards {
-  position: relative;
-  height: 280px;
-  width: 2000px;
-  overflow: hidden;
-}
-
-.last-cards .card {
+.city {
   position: absolute;
-  top: 0;
-  display: inline-block;
-  height: 280px;
-  width: 200px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -938px; /* width / 2 */
+  height: 776px;
+  width: 1876px;
+  background: url("city.png") no-repeat;
 }
 
-.contributing {
-  height: 300px;
-  background: rgba(0, 255, 0, 0.3);
-  color: white;
+.machine-tower {
+  position: absolute;
+  top: 223px;
+  left: 50%;
+  margin-left: -216px; /* width / 2 */
+  width: 432px;
+  height: 1200px;
+  background: url("machine-tower.png") no-repeat;
 }
 
-footer {
+@-webkit-keyframes hero-light-animation { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+@-moz-keyframes    hero-light-animation { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+@-ms-keyframes     hero-light-animation { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+@-o-keyframes      hero-light-animation { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes         hero-light-animation { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+.hero-light {
+  position: absolute;
+  top: 223px;
+  left: 50%;
+  margin-left: -52px;
+  width: 84px;
+  height: 176px;
+  background: url("hero-light.png") no-repeat;
+
+  -webkit-animation: hero-light-animation 5s linear infinite;
+     -moz-animation: hero-light-animation 5s linear infinite;
+      -ms-animation: hero-light-animation 5s linear infinite;
+       -o-animation: hero-light-animation 5s linear infinite;
+          animation: hero-light-animation 5s linear infinite;
+}
+
+@-webkit-keyframes card-light-animation { 0% { opacity: 0.05; -webkit-transform: rotate(0deg); } 50% { opacity: 1; } 100% { opacity: 0.05; -webkit-transform: rotate(360deg); } }
+@-moz-keyframes    card-light-animation { 0% { opacity: 0.05; -moz-transform: rotate(0deg); }    50% { opacity: 1; } 100% { opacity: 0.05; -moz-transform: rotate(360deg); } }
+@-ms-keyframes     card-light-animation { 0% { opacity: 0.05; -ms-transform: rotate(0deg); }     50% { opacity: 1; } 100% { opacity: 0.05; -ms-transform: rotate(360deg); } }
+@-o-keyframes      card-light-animation { 0% { opacity: 0.05; -o-transform: rotate(0deg); }      50% { opacity: 1; } 100% { opacity: 0.05; -o-transform: rotate(360deg); } }
+@keyframes         card-light-animation { 0% { opacity: 0.05; transform: rotate(0deg); }         50% { opacity: 1; } 100% { opacity: 0.05; transform: rotate(360deg); } }
+
+.card-light {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  margin-left: -256px;
+  width: 428px;
+  height: 428px;
+  background: url("card-light.png") no-repeat;
+
+  -webkit-animation: card-light-animation 5s linear infinite;
+     -moz-animation: card-light-animation 5s linear infinite;
+      -ms-animation: card-light-animation 5s linear infinite;
+       -o-animation: card-light-animation 5s linear infinite;
+          animation: card-light-animation 5s linear infinite;
+}
+
+@-webkit-keyframes red-eye-animation { 0% { -webkit-transform: translateX(0px); } 50% { -webkit-transform: translateX(50px); } 100% { -webkit-transform: translateX(0px); } }
+@-moz-keyframes    red-eye-animation { 0% { -moz-transform: translateX(0px); }    50% { -moz-transform: translateX(50px); }    100% { -moz-transform: translateX(0px); } }
+@-ms-keyframes     red-eye-animation { 0% { -ms-transform: translateX(0px); }     50% { -ms-transform: translateX(50px); }     100% { -ms-transform: translateX(0px); } }
+@-o-keyframes      red-eye-animation { 0% { -o-transform: translateX(0px); }      50% { -o-transform: translateX(50px); }      100% { -o-transform: translateX(0px); } }
+@keyframes         red-eye-animation { 0% { transform: translateX(0px); }         50% { transform: translateX(50px); }         100% { transform: translateX(0px); } }
+
+.machine-red-eye {
+  position: absolute;
+  top: 455px;
+  left: 50%;
+  margin-left: -80px;
+  width: 80px;
+  height: 8px;
+  background: url("machine-red-eye.png") no-repeat;
+
+  -webkit-animation: red-eye-animation 2s ease-out infinite;
+     -moz-animation: red-eye-animation 2s ease-out infinite;
+      -ms-animation: red-eye-animation 2s ease-out infinite;
+       -o-animation: red-eye-animation 2s ease-out infinite;
+          animation: red-eye-animation 2s ease-out infinite;
+}
+
+.body-content-content {
+  position: relative;
+  width: 1000px;
+  height: 1442px;
+  margin: 0 auto;
+}
+
+.body-footer {
   width: 1000px;
   margin: 0 auto;
   padding: 20px 0 50px;
   color: white;
 }
 
-footer .logo {
+.body-footer .logo {
   float: left;
   width: 350px;
 }
 
-footer .column {
+.body-footer .column {
   float: left;
   width: 305px;
   margin-left: 20px;
 }
 
-footer .column ul {
+.body-footer .column ul {
   list-style: none;
   padding: 0;
   margin: 0;

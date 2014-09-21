@@ -1,18 +1,22 @@
 $(function() {
   'use strict';
 
-  var $el = {
-    window: $(window),
-    header: $('header')
-  };
+  var _$el = {
+        window: $(window),
+        header: $('header'),
+        city: $('.city')
+      };
 
-  $el.window.scroll(function(e) {
-    if($el.window.scrollTop() >= 211) {
-      $el.header.addClass('locked');
-    }
-    else {
-      $el.header.removeClass('locked');
-    }
+  // 1735 = bottom: 0
+
+  _$el.window.scroll(function() {
+    var scrollBottom = _$el.window.scrollTop() + _$el.window.height();
+
+    var bottom = (1735 - scrollBottom) * 0.4;
+
+    console.log(scrollBottom, bottom);
+
+    _$el.city.css('bottom', bottom);
   });
 
 });
