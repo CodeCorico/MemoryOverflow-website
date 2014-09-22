@@ -5,18 +5,19 @@ $(function() {
         window: $(window),
         header: $('header'),
         city: $('.city')
+      },
+      cityRules = {
+        normalPosition: 1735,
+        scrollSpeed: 0.4
       };
 
-  // 1735 = bottom: 0
-
-  _$el.window.scroll(function() {
+  function _onScroll() {
     var scrollBottom = _$el.window.scrollTop() + _$el.window.height();
 
-    var bottom = (1735 - scrollBottom) * 0.4;
+    _$el.city.css('bottom', (cityRules.normalPosition - scrollBottom) * cityRules.scrollSpeed);
+  }
+  _onScroll();
 
-    console.log(scrollBottom, bottom);
-
-    _$el.city.css('bottom', bottom);
-  });
+  _$el.window.scroll(_onScroll);
 
 });
