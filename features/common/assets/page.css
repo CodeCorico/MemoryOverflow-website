@@ -421,7 +421,6 @@ a:hover {
   left: 0;
   width: 1000px;
   height: 320px;
-  overflow: hidden;
 }
 
 .body-content-content .panel-game {
@@ -457,11 +456,11 @@ a:hover {
           animation: hologram-laser-animation 0.1s linear infinite;
 }
 
-@-webkit-keyframes hologram-panel-animation { 0% { opacity: 0.5; } 50% { opacity: 0.4; } 100% { opacity: 0.5; } }
-@-moz-keyframes    hologram-panel-animation { 0% { opacity: 0.5; } 50% { opacity: 0.4; } 100% { opacity: 0.5; } }
-@-ms-keyframes     hologram-panel-animation { 0% { opacity: 0.5; } 50% { opacity: 0.4; } 100% { opacity: 0.5; } }
-@-o-keyframes      hologram-panel-animation { 0% { opacity: 0.5; } 50% { opacity: 0.4; } 100% { opacity: 0.5; } }
-@keyframes         hologram-panel-animation { 0% { opacity: 0.5; } 50% { opacity: 0.4; } 100% { opacity: 0.5; } }
+@-webkit-keyframes hologram-panel-animation { 0% { opacity: 0.8; } 50% { opacity: 0.7; } 100% { opacity: 0.8; } }
+@-moz-keyframes    hologram-panel-animation { 0% { opacity: 0.8; } 50% { opacity: 0.7; } 100% { opacity: 0.8; } }
+@-ms-keyframes     hologram-panel-animation { 0% { opacity: 0.8; } 50% { opacity: 0.7; } 100% { opacity: 0.8; } }
+@-o-keyframes      hologram-panel-animation { 0% { opacity: 0.8; } 50% { opacity: 0.7; } 100% { opacity: 0.8; } }
+@keyframes         hologram-panel-animation { 0% { opacity: 0.8; } 50% { opacity: 0.7; } 100% { opacity: 0.8; } }
 
 .panel .hologram-panel {
   opacity: 0.5;
@@ -477,6 +476,58 @@ a:hover {
       -ms-animation: hologram-panel-animation 0.1s linear infinite;
        -o-animation: hologram-panel-animation 0.1s linear infinite;
           animation: hologram-panel-animation 0.1s linear infinite;
+}
+
+.panel.panel-game .hologram-panel {
+  background-image: url("hologram-panel-game.png");
+}
+
+.panel .column, .panel .column:hover, .panel .column:visited {
+  position: relative;
+  float: left;
+  width: 33%;
+  height: 100%;
+  color: white;
+  text-decoration: none;
+}
+
+@-webkit-keyframes cursor-animation { 0% { -webkit-transform: translateY(0px); } 50% { -webkit-transform: translateY(10px); } 100% { -webkit-transform: translateY(0px); } }
+@-moz-keyframes    cursor-animation { 0% { -moz-transform: translateY(0px); }    50% { -moz-transform: translateY(10px); }    100% { -moz-transform: translateY(0px); } }
+@-ms-keyframes     cursor-animation { 0% { -ms-transform: translateY(0px); }     50% { -ms-transform: translateY(10px); }     100% { -ms-transform: translateY(0px); } }
+@-o-keyframes      cursor-animation { 0% { -o-transform: translateY(0px); }      50% { -o-transform: translateY(10px); }      100% { -o-transform: translateY(0px); } }
+@keyframes         cursor-animation { 0% { transform: translateY(0px); }         50% { transform: translateY(10px); }         100% { transform: translateY(0px); } }
+
+.panel .column .cursor {
+  display: none;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  width: 35px;
+  margin-left: -17px;
+  height: 20px;
+  background: url("cursor.png") no-repeat;
+
+  -webkit-animation: cursor-animation 0.5s ease-out infinite;
+     -moz-animation: cursor-animation 0.5s ease-out infinite;
+      -ms-animation: cursor-animation 0.5s ease-out infinite;
+       -o-animation: cursor-animation 0.5s ease-out infinite;
+          animation: cursor-animation 0.5s ease-out infinite;
+}
+
+.panel .column:hover .cursor {
+  display: block;
+}
+
+.panel .column span {
+  display: block;
+  opacity: 0;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: 90%;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
 }
 
 .body-footer {

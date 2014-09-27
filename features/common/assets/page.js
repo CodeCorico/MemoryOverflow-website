@@ -68,13 +68,17 @@ $(function() {
             height: 320
           }, {
             display: 'block',
-            duration: 100,
-            easing: 'linear'
+            duration: 250,
+            easing: 'linear',
+            complete: function() {
+              $panel.find('.column span').css('opacity', 1);
+            }
           });
         }
       }
       else if($panel.css('display') == 'block') {
         $panel.css('display', 'none');
+        $panel.find('.column span').css('opacity', 0);
       }
     });
   }
