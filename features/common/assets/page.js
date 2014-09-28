@@ -32,7 +32,7 @@ $(function() {
           $hologramPanel = $panel.find('.hologram-panel'),
           panelMinCenter = panel.center - _panelsVisibilityMargin,
           panelMaxCenter = panel.center + _panelsVisibilityMargin,
-          panelTopOffset = (Math.abs(windowCenter - panel.center) * 0.2);
+          panelTopOffset = (Math.abs(windowCenter - panel.center) * 0.6);
 
       if(windowCenter > panel.center) {
         $panel.velocity({ translateY: -panelTopOffset }, { duration: 0 });
