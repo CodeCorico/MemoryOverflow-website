@@ -416,7 +416,6 @@ a:hover {
 }
 
 .body-content-content .panel {
-  display: none;
   position: absolute;
   left: 0;
   width: 1000px;
@@ -456,20 +455,25 @@ a:hover {
           animation: hologram-laser-animation 0.1s linear infinite;
 }
 
-@-webkit-keyframes hologram-panel-animation { 0% { opacity: 0.8; } 50% { opacity: 0.7; } 100% { opacity: 0.8; } }
-@-moz-keyframes    hologram-panel-animation { 0% { opacity: 0.8; } 50% { opacity: 0.7; } 100% { opacity: 0.8; } }
-@-ms-keyframes     hologram-panel-animation { 0% { opacity: 0.8; } 50% { opacity: 0.7; } 100% { opacity: 0.8; } }
-@-o-keyframes      hologram-panel-animation { 0% { opacity: 0.8; } 50% { opacity: 0.7; } 100% { opacity: 0.8; } }
-@keyframes         hologram-panel-animation { 0% { opacity: 0.8; } 50% { opacity: 0.7; } 100% { opacity: 0.8; } }
+@-webkit-keyframes hologram-panel-animation { 0% { opacity: 1; } 50% { opacity: 0.9; } 100% { opacity: 1; } }
+@-moz-keyframes    hologram-panel-animation { 0% { opacity: 1; } 50% { opacity: 0.9; } 100% { opacity: 1; } }
+@-ms-keyframes     hologram-panel-animation { 0% { opacity: 1; } 50% { opacity: 0.9; } 100% { opacity: 1; } }
+@-o-keyframes      hologram-panel-animation { 0% { opacity: 1; } 50% { opacity: 0.9; } 100% { opacity: 1; } }
+@keyframes         hologram-panel-animation { 0% { opacity: 1; } 50% { opacity: 0.9; } 100% { opacity: 1; } }
 
 .panel .hologram-panel {
-  opacity: 0.5;
   position: absolute;
   top: 0;
   left: 0;
   width: 1000px;
   height: 320px;
   background: url("hologram-panel.png") no-repeat center center;
+
+  -webkit-transform: scale(0);
+     -moz-transform: scale(0);
+      -ms-transform: scale(0);
+       -o-transform: scale(0);
+          transform: scale(0);
 
   -webkit-animation: hologram-panel-animation 0.1s linear infinite;
      -moz-animation: hologram-panel-animation 0.1s linear infinite;
@@ -489,6 +493,16 @@ a:hover {
   height: 100%;
   color: white;
   text-decoration: none;
+
+  background: -moz-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,0.03) 30%,rgba(0,0,0,0.85) 150%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(0,0,0,0)),color-stop(30%,rgba(0,0,0,0.03)),color-stop(150%,rgba(0,0,0,0.85)));
+  background: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,0.03) 30%,rgba(0,0,0,0.85) 150%);
+  background: -o-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,0.03) 30%,rgba(0,0,0,0.85) 150%);
+  background: -ms-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,0.03) 30%,rgba(0,0,0,0.85) 150%);
+  background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,0.03) 30%,rgba(0,0,0,0.85) 150%);
+  -moz-text-shadow: #5b5d61 1px 1px 5px;
+  -webkit-text-shadow: #5b5d61 1px 1px 5px;
+  text-shadow: #5b5d61 1px 1px 5px;
 }
 
 @-webkit-keyframes cursor-animation { 0% { -webkit-transform: translateY(0px); } 50% { -webkit-transform: translateY(10px); } 100% { -webkit-transform: translateY(0px); } }
@@ -520,7 +534,6 @@ a:hover {
 
 .panel .column span {
   display: block;
-  opacity: 0;
   position: absolute;
   bottom: 10%;
   left: 5%;

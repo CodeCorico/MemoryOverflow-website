@@ -36,49 +36,45 @@ $(function() {
           panelTopOffset = (Math.abs(windowCenter - panel.center) * 0.2);
 
       if(windowCenter > panel.center) {
-        $panel.css('top', panel.top - panelTopOffset);
-        $hologramLaser.css('top', panel.hologramLaserTop + panelTopOffset);
+        $panel.velocity({ translateY: -panelTopOffset }, { duration: 0 });
+        $hologramLaser.velocity({ translateY: panel.hologramLaserTop + panelTopOffset }, { duration: 0 });
       }
       else if(windowCenter < panel.center) {
-        $panel.css('top', panel.top + panelTopOffset);
-        $hologramLaser.css('top', panel.hologramLaserTop - panelTopOffset);
+        $panel.velocity({ translateY: panelTopOffset }, { duration: 0 });
+        $hologramLaser.velocity({ translateY: panel.hologramLaserTop - panelTopOffset }, { duration: 0 });
       }
       else {
-        $panel.css('top', panel.top);
-        $hologramLaser.css('top', panel.hologramLaserTop);
+        $panel.velocity({ translateY: 0 }, { duration: 0 });
+        $hologramLaser.velocity({ translateY: 0 }, { duration: 0 });
       }
 
       if(panelMinCenter <= windowCenter && panelMaxCenter >= windowCenter) {
-        if($panel.css('display') != 'block') {
+        if(!$hologramPanel.data('open')) {
+          $hologramPanel.data('open', true);
+
           $hologramPanel
             .velocity('stop', true)
-            .css({
-              top: 160,
-              left: 500,
-              width: 0,
-              height: 0
+            .velocity({
+              scale: [1, 0]
+            }, {
+              display: 'block',
+              duration: 250,
+              easing: 'linear'
             });
-
-          $panel.css('display', 'block');
-
-          $hologramPanel.velocity({
-            top: 0,
-            left: 0,
-            width: 1000,
-            height: 320
-          }, {
-            display: 'block',
-            duration: 250,
-            easing: 'linear',
-            complete: function() {
-              $panel.find('.column span').css('opacity', 1);
-            }
-          });
         }
       }
-      else if($panel.css('display') == 'block') {
-        $panel.css('display', 'none');
-        $panel.find('.column span').css('opacity', 0);
+      else if($hologramPanel.data('open')) {
+        $hologramPanel.data('open', false);
+
+        $hologramPanel
+          .velocity('stop', true)
+          .velocity({
+            scale: [0, 1]
+          }, {
+            display: 'none',
+            duration: 150,
+            easing: 'linear'
+          });
       }
     });
   }
@@ -88,21 +84,11 @@ $(function() {
       var $panel = $(panel.selector),
           $hologramLaser = $panel.find('.hologram-laser');
 
-      $panel.css({
-        visibility: 'hidden',
-        display: 'block'
-      });
-
       $.extend(true, panel, {
         height: $panel.outerHeight(),
         top: $panel.position().top,
         hologramLaserTop: $hologramLaser.position().top,
         center: $panel.offset().top + ($panel.outerHeight() / 2)
-      });
-
-      $panel.css({
-        visibility: 'visible',
-        display: 'none'
       });
     });
 
