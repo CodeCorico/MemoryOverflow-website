@@ -30,22 +30,18 @@ $(function() {
     $.each(_panels, function(index, panel) {
       var $panel = $(panel.selector),
           $hologramPanel = $panel.find('.hologram-panel'),
-          $hologramLaser = $panel.find('.hologram-laser'),
           panelMinCenter = panel.center - _panelsVisibilityMargin,
           panelMaxCenter = panel.center + _panelsVisibilityMargin,
           panelTopOffset = (Math.abs(windowCenter - panel.center) * 0.2);
 
       if(windowCenter > panel.center) {
         $panel.velocity({ translateY: -panelTopOffset }, { duration: 0 });
-        $hologramLaser.velocity({ translateY: panel.hologramLaserTop + panelTopOffset }, { duration: 0 });
       }
       else if(windowCenter < panel.center) {
         $panel.velocity({ translateY: panelTopOffset }, { duration: 0 });
-        $hologramLaser.velocity({ translateY: panel.hologramLaserTop - panelTopOffset }, { duration: 0 });
       }
       else {
         $panel.velocity({ translateY: 0 }, { duration: 0 });
-        $hologramLaser.velocity({ translateY: 0 }, { duration: 0 });
       }
 
       if(panelMinCenter <= windowCenter && panelMaxCenter >= windowCenter) {
@@ -81,13 +77,11 @@ $(function() {
 
   function _init() {
     $.each(_panels, function(index, panel) {
-      var $panel = $(panel.selector),
-          $hologramLaser = $panel.find('.hologram-laser');
+      var $panel = $(panel.selector);
 
       $.extend(true, panel, {
         height: $panel.outerHeight(),
         top: $panel.position().top,
-        hologramLaserTop: $hologramLaser.position().top,
         center: $panel.offset().top + ($panel.outerHeight() / 2)
       });
     });

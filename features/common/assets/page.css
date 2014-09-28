@@ -440,9 +440,8 @@ a:hover {
 @-o-keyframes      hologram-laser-animation { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
 @keyframes         hologram-laser-animation { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
 
-.panel .hologram-laser {
+.hologram-laser {
   position: absolute;
-  top: 78px;
   left: 406px;
   width: 165px;
   height: 165px;
@@ -453,6 +452,18 @@ a:hover {
       -ms-animation: hologram-laser-animation 0.1s linear infinite;
        -o-animation: hologram-laser-animation 0.1s linear infinite;
           animation: hologram-laser-animation 0.1s linear infinite;
+}
+
+.hologram-laser-game {
+  top: 492px;
+}
+
+.hologram-laser-cards {
+  top: 835px;
+}
+
+.hologram-laser-project {
+  top: 1186px;
 }
 
 @-webkit-keyframes hologram-panel-animation { 0% { opacity: 1; } 50% { opacity: 0.9; } 100% { opacity: 1; } }
