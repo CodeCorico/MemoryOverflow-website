@@ -3,8 +3,10 @@ $(function() {
 
   var _$el = {
         window: $(window),
-        header: $('header'),
-        city: $('.city')
+        header: $('.body-header'),
+        city: $('.city'),
+        logo: $('.logo'),
+        homeMessage: $('.home-message')
       },
       _cityRules = {
         normalPosition: 1735,
@@ -23,7 +25,18 @@ $(function() {
     var windowHeight = _$el.window.height(),
         scrollTop = _$el.window.scrollTop(),
         scrollBottom = scrollTop + windowHeight,
-        windowCenter = scrollTop + (windowHeight / 2);
+        windowCenter = scrollTop + (windowHeight / 2),
+        headerTranslateY = -Math.round(scrollTop * 0.9),
+        headerOpacity = Math.max(0, 1 - ((scrollTop * 100 / (_$el.header.height() / 2)) / 100));
+
+    _$el.logo.css({
+      transform: 'translateY(' + headerTranslateY + 'px)',
+      opacity: headerOpacity
+    });
+    _$el.homeMessage.css({
+      transform: 'translateY(' + headerTranslateY + 'px)',
+      opacity: headerOpacity
+    });
 
     _$el.city.css('bottom', (_cityRules.normalPosition - scrollBottom) * _cityRules.scrollSpeed);
 
