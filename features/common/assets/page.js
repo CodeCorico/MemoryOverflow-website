@@ -32,17 +32,17 @@ $(function() {
           $hologramPanel = $panel.find('.hologram-panel'),
           panelMinCenter = panel.center - _panelsVisibilityMargin,
           panelMaxCenter = panel.center + _panelsVisibilityMargin,
-          panelTopOffset = (Math.abs(windowCenter - panel.center) * 0.6);
+          panelTopOffset = (Math.abs(windowCenter - panel.center) * 0.6),
+          translateY = 0;
 
       if(windowCenter > panel.center) {
-        $panel.velocity({ translateY: -panelTopOffset }, { duration: 0 });
+        translateY = -panelTopOffset;
       }
       else if(windowCenter < panel.center) {
-        $panel.velocity({ translateY: panelTopOffset }, { duration: 0 });
+        translateY = panelTopOffset;
       }
-      else {
-        $panel.velocity({ translateY: 0 }, { duration: 0 });
-      }
+
+      $panel.css('transform', 'translateY(' + translateY + 'px)');
 
       if(panelMinCenter <= windowCenter && panelMaxCenter >= windowCenter) {
         if(!$hologramPanel.data('open')) {
