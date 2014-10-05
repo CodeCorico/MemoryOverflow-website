@@ -2,7 +2,7 @@
 
 Website automatically generated for MemoryOverflow card game.
 
-:exclamation: This repo does't take contribution PR. It's maintained by the CodeCorico team. Post issues on the official MemoryOverflow project.
+:exclamation: This repo does't take PR contribution. It's maintained by the CodeCorico team. For website modifications, you can post issues on the official [MemoryOverflow project](https://github.com/CodeCorico/MemoryOverflow).
 
 MemoryOverflow is a card game designed by developers for developers. Go to http://memoryoverflow.codecorico.com to see it in action!
 
