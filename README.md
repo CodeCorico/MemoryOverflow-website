@@ -1,6 +1,6 @@
 # MemoryOverflow Website
 
-[![Website Status](http://publish.memoryoverflow.codecorico.com/status.svg)](https://github.com/CodeCorico/MemoryOverflow-website)
+[![Website Status](http://publish.memoryoverflow.org/status.svg)](https://github.com/CodeCorico/MemoryOverflow-website)
 
 Website automatically generated for MemoryOverflow card game.
 
