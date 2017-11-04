@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Memory Overflow | Card game by developers for developers</title>
+  <title>Memory Overflow | Cards &amp; Editions</title>
   <meta name="description" content="Card game by developers for developers - Destroy your enemies, controls the Machine, be the new Developer Master" />
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -19,8 +19,13 @@
   <link rel="stylesheet" href="/assets/common/page.css" type="text/css" />
   <link
     rel="stylesheet" type="text/css"
-    href="/assets/homepage/homepage.css"
+    href="/assets/cards/cards.css"
     media="screen"
+  />
+  <link
+    rel="stylesheet" type="text/css"
+    href="/assets/cards/cards-print.css"
+    media="print"
   />
 
 </head>
@@ -54,54 +59,94 @@
   <div class="city"></div>
 </div>
 
-<div class="card-light"></div>
-<div class="machine-tower"></div>
-<div class="hero-light"></div>
-<div class="machine-red-eye"></div>
+<article class="body-page">
 
-<div class="body-page body-homepage">
-  <div class="hologram-laser hologram-laser-game"></div>
-  <div class="hologram-laser hologram-laser-cards"></div>
-  <div class="hologram-laser hologram-laser-contribute"></div>
+  <h1>Cards &amp; Editions</h1>
 
-  <div class="panel panel-game">
-    <div class="hologram-panel">
-      <a class="column" href="memory-overflow.html">
-        <div class="cursor"></div>
-        <span>Memory Overflow</span>
-      </a>
+  <p><a href="#" class="print-button">Print the cards</a></p>
 
-      <a class="column" href="story.html">
-        <div class="cursor"></div>
-        <span>The Story</span>
-      </a>
+</article>
 
-      <a class="column" href="game-rules.html">
-        <div class="cursor"></div>
-        <span>Game rules</span>
-      </a>
+<div class="print-area">
+  <div class="print-area-intro">
+    <h1>How to create your cards</h1>
+
+    <div class="print-area-intro-column">
+      <h2>1) Start</h2>
+      <img src="/assets/cards/tuto-start.png" />
+      <p>Put your pages the faces of the cards on the table. You should not be able to see the cards.</p>
     </div>
+
+    <div class="print-area-intro-column even">
+      <h2>2) Fold</h2>
+      <img src="/assets/cards/tuto-fold.png" />
+      <p>Fold your pages in half. The ends must be perfectly aligned. The back and front of the cards should meet.</p>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="print-area-intro-column">
+      <h2>3) Unfold</h2>
+      <img src="/assets/cards/tuto-unfold.png" />
+      <p>Unfold your pages. The layout is ready to easily fold them again.</p>
+    </div>
+
+    <div class="print-area-intro-column even">
+      <h2>4) Glue</h2>
+      <img src="/assets/cards/tuto-glue.png" />
+      <p>Apply some glue on the blank part of the page, under the back of the cards.</p>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="print-area-intro-column">
+      <h2>5) Fold</h2>
+      <img src="/assets/cards/tuto-fold.png" />
+      <p>Re-fold the pages as you did before.</p>
+    </div>
+
+    <div class="print-area-intro-column even">
+      <h2>6) Cut</h2>
+      <img src="/assets/cards/tuto-cut.png" />
+      <p>Cut off your cards.</p>
+    </div>
+
+    <div class="clear"></div>
   </div>
 
-  <div class="panel panel-cards">
-    <div class="hologram-panel">
-      <a class="column column-100" href="cards.html">
-        <div class="cursor"></div>
-        <span>Cards &amp; Editions</span>
-      </a>
-    </div>
+  <div class="print-area-top">
+    <img src="/cards/fototse/code-18.fr_FR.jpg" />
+    <img src="/cards/fototse/code-19.fr_FR.jpg" />
+    <img src="/cards/fototse/foo-javascript.fr_FR.jpg" />
+    <img src="/cards/fototse/reset-commit.fr_FR.jpg" />
   </div>
 
-  <div class="panel panel-contribute">
-    <div class="hologram-panel">
-      <a class="column column-100" href="contribute.html">
-        <div class="cursor"></div>
-        <span>Contribute! Join the C.A.M.</span>
-      </a>
-    </div>
+  <div class="print-area-bottom">
+    <img src="/cards/fototse/the-machine-back-reversed.jpg" />
+    <img src="/cards/fototse/the-machine-back-reversed.jpg" />
+    <img src="/cards/fototse/back-reversed.jpg" />
+    <img src="/cards/fototse/back-reversed.jpg" />
   </div>
 
+  <div class="print-area-pages">1/2</div>
+
+  <div class="print-area-top">
+    <img src="/cards/fototse/code-18.fr_FR.jpg" />
+    <img src="/cards/fototse/code-19.fr_FR.jpg" />
+    <img src="/cards/fototse/foo-javascript.fr_FR.jpg" />
+    <img src="/cards/fototse/reset-commit.fr_FR.jpg" />
+  </div>
+
+  <div class="print-area-bottom">
+    <img src="/cards/fototse/the-machine-back-reversed.jpg" />
+    <img src="/cards/fototse/the-machine-back-reversed.jpg" />
+    <img src="/cards/fototse/back-reversed.jpg" />
+    <img src="/cards/fototse/back-reversed.jpg" />
+  </div>
+
+  <div class="print-area-pages">2/2</div>
 </div>
+
 
   </div>
 
@@ -137,8 +182,7 @@
   <script type="text/javascript" src="/vendor/jquery/jquery-1.11.1.min.js"></script>
   <script type="text/javascript" src="/vendor/velocityjs/velocity.min.js"></script>
   <script type="text/javascript" src="/assets/common/page.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-  <script type="text/javascript" src="/assets/homepage/homepage.js"></script>
+  <script type="text/javascript" src="/assets/cards/cards.js"></script>
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
